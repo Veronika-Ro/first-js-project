@@ -1,0 +1,12 @@
+body {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 400;
+    font-size: 16px;
+    /* Sets the font size to 16px */
+    line-height: 1.6;
+    /* Sets the line-height to 1.6 */
+    position: relative;
+    padding-bottom: 6rem;
+    min-height: 100vh;
+    margin:0 30px; 
+  }

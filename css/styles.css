@@ -10,3 +10,16 @@ body {
     min-height: 100vh;
     margin:0 30px; 
   }
+
+.pokemonButton {
+  border: 2px rgb(183, 186, 189) solid;
+  height: 50px;
+  width: 200px;
+  margin-bottom: 10px;
+  background-color: rgb(255, 232, 235);
+}
+
+ul {
+  list-style-type:none;
+  
+}

@@ -7,8 +7,8 @@ let pokemonRepository = (function () {
   function addListItem(pokemon){
     let orderedList = document.querySelector ('.pokemon-list');
     let listItem = document.createElement('li');
-    listItem.classList.add('col-12');
-    listItem.classList.add('col-md-4');
+    listItem.classList.add('col-3');
+    listItem.classList.add('col-sm');
     let button = document.createElement('button');
     listItem.classList.add('group-list-item');
     button.innerText = pokemon.name;
@@ -47,7 +47,11 @@ let pokemonRepository = (function () {
       // Now we add the details to the pokemon
       pokemon.imageUrl = details.sprites.front_default;
       pokemon.height = details.height;
+      pokemon.weight = details.weight;
       pokemon.types = details.types;
+      for (var i = 0; i < details.types.length; i++) {
+        pokemon.types.push(details.types[i].type.name);
+      }
     }).catch(function (e) {
       console.error(e);
     });
@@ -71,15 +75,22 @@ let pokemonRepository = (function () {
     imageElementFront.attr("src", pokemon.imageUrl);
 
     //creating element for height in modal content
-    let heightElement= $("<p>" + "height : " + pokemon.height + "</p>");
+    let heightElement = $("<p>" + "height : " + pokemon.height + "</p>");
 
     //creating element for type in modal content
     let typesElement = $("<p>" + "type : " + pokemon.types + "</p>");
+
+    //creating element for weight in modal content
+    let weightElement = $("<p>" + "weight : " + pokemon.weight + "</p>");
+    
+
 
     modalTitle.append(nameElement);
     modalBody.append(imageElementFront);
     modalBody.append(heightElement);
     modalBody.append(typesElement);
+    modalBody.append(weightElement);
+    
 
     }
 

@@ -7,8 +7,7 @@ let pokemonRepository = (function () {
   function addListItem(pokemon){
     let orderedList = document.querySelector ('.pokemon-list');
     let listItem = document.createElement('li');
-    listItem.classList.add('col-3');
-    listItem.classList.add('col-sm');
+    listItem.classList.add('col-xs-3');
     let button = document.createElement('button');
     listItem.classList.add('group-list-item');
     button.innerText = pokemon.name;

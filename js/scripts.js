@@ -49,9 +49,9 @@ let pokemonRepository = (function () {
       pokemon.height = details.height;
       pokemon.weight = details.weight;
       pokemon.types = details.types;
-      for (var i = 0; i < details.types.length; i++) {
-        pokemon.types.push(details.types[i].type.name);
-      }
+      pokemon.types = details.types.map(function(pokemon) {
+        return pokemon.type.name;
+        });
     }).catch(function (e) {
       console.error(e);
     });

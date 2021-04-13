@@ -3,25 +3,6 @@ let pokemonRepository = (function () {
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
   let modalContainer = document.querySelector('#modal-container');
   
-
-  function addListItem(pokemon){
-    let orderedList = document.querySelector ('.pokemon-list');
-    let listItem = document.createElement('li');
-    listItem.classList.add('col-xs-3');
-    let button = document.createElement('button');
-    listItem.classList.add('group-list-item');
-    button.innerText = pokemon.name;
-    button.classList.add('pokemonButton' , 'btn' , 'btn-outline-dark');
-    button.setAttribute('data-toggle','modal');
-    button.setAttribute('data-target', '#modal-container');
-    //append the button and the list to their parents 
-    listItem.appendChild(button);
-    orderedList.appendChild(listItem);
-    button.addEventListener('click', function (event) {
-    showDetails (pokemon);
-    });
-  }
-
   function loadList() {
     return fetch(apiUrl).then(function (response) {
       return response.json();
@@ -53,6 +34,25 @@ let pokemonRepository = (function () {
         });
     }).catch(function (e) {
       console.error(e);
+    });
+  }
+
+  function addListItem(pokemon){
+    let orderedList = document.querySelector ('.pokemon-list');
+    let listItem = document.createElement('li');
+    listItem.classList.add('col-3');
+    listItem.classList.add('col-sm-1');
+    let button = document.createElement('button');
+    listItem.classList.add('group-list-item');
+    button.innerText = pokemon.name;
+    button.classList.add('pokemonButton' , 'btn' , 'btn-outline-dark');
+    button.setAttribute('data-toggle','modal');
+    button.setAttribute('data-target', '#modal-container');
+    //append the button and the list to their parents 
+    listItem.appendChild(button);
+    orderedList.appendChild(listItem);
+    button.addEventListener('click', function (event) {
+    showDetails (pokemon);
     });
   }
 
@@ -101,12 +101,13 @@ let pokemonRepository = (function () {
     });
     }
 
+    //adds and pushes the pokemon to the list
     function add(pokemon) {
     pokemonList.push(pokemon);
     }
 
 
-  //getAll execute the pokemonlist
+   //getAll execute the pokemonlist
     function getAll() {
     return pokemonList;
     }

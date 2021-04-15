@@ -9,8 +9,16 @@ body {
     position: relative;
     padding-bottom: 6rem;
     min-height: 100vh;
-    margin:50px 30px; 
+    padding: 2rem 0.5rem; 
 
+  }
+
+h1 {
+    width: 300px;
+    padding: 10px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 .pokemonButton {
@@ -25,8 +33,7 @@ body {
 }
 
 ul {
-  list-style-type:none;
-  
+  list-style-type: none;
 }
 
 .modal {

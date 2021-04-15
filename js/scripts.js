@@ -40,12 +40,10 @@ let pokemonRepository = (function () {
   function addListItem(pokemon){
     let orderedList = document.querySelector ('.pokemon-list');
     let listItem = document.createElement('li');
-    listItem.classList.add('col-3');
-    listItem.classList.add('col-sm-1');
+    listItem.classList.add('group-list-item' , 'col-12' , 'col-sm' , 'col-xs' , 'justify-content-around' , 'd-flex');
     let button = document.createElement('button');
-    listItem.classList.add('group-list-item');
     button.innerText = pokemon.name;
-    button.classList.add('pokemonButton' , 'btn' , 'btn-outline-dark');
+    button.classList.add('pokemonButton' , 'btn' , 'btn-outline-danger');
     button.setAttribute('data-toggle','modal');
     button.setAttribute('data-target', '#modal-container');
     //append the button and the list to their parents 
